@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>箭牌零售门店数字化项目经验</title>
+    <title>刘嘉威 - 运营经理专业作品集</title>
     <style>
         /* 全局重置与基础样式 */
         * {
@@ -14,7 +14,7 @@
         }
 
         body {
-            max-width: 1000px;
+            max-width: 1200px;
             width: 100%;
             margin: 0 auto;
             padding: 20px 15px;
@@ -25,37 +25,67 @@
             scroll-behavior: smooth; /* 平滑滚动 */
         }
 
-        /* 标题样式 */
-        h1 {
+        /* 头部名片样式 */
+        .card-avatar {
             text-align: center;
-            color: #1e40af;
-            margin: 30px 0 40px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #3b82f6;
+            padding: 30px 20px;
+            background: linear-gradient(120deg, #1e40af, #3b82f6);
+            color: white;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 15px rgba(30, 64, 175, 0.15);
+        }
+        .card-avatar h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
             font-weight: 700;
-            font-size: 28px;
+        }
+        .card-avatar p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin: 5px 0;
+        }
+        .contact {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            font-size: 16px;
+        }
+        .contact div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
+        /* 标题样式 */
         h2 {
             color: #1e40af;
-            margin: 30px 0 15px;
-            font-size: 22px;
+            margin: 35px 0 20px;
+            font-size: 24px;
             position: relative;
-            padding-left: 12px;
+            padding-left: 15px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
         }
-
         h2::before {
             content: "";
             position: absolute;
             left: 0;
-            top: 8px;
-            width: 4px;
-            height: 20px;
+            top: 10px;
+            width: 5px;
+            height: 22px;
             background-color: #3b82f6;
-            border-radius: 2px;
+            border-radius: 3px;
         }
-
         h3 {
+            color: #1e40af;
+            margin: 25px 0 12px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        h4 {
             color: #334155;
             margin: 20px 0 10px;
             font-size: 18px;
@@ -72,20 +102,19 @@
             border: 1px solid #e2e8f0;
             transition: box-shadow 0.3s ease;
         }
-
         .card:hover {
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
         }
 
-        /* 基础信息样式 */
-        .basic-info {
+        /* 基础信息/项目概况样式 */
+        .base-info {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 10px;
+            gap: 15px;
+            margin-bottom: 15px;
+            flex-direction: row;
         }
-
-        .basic-info > div {
+        .base-info > div {
             background-color: #eff6ff;
             padding: 8px 16px;
             border-radius: 6px;
@@ -98,19 +127,44 @@
             margin-left: 20px;
             margin-bottom: 15px;
         }
-
         ul li {
             margin-bottom: 8px;
+            list-style: disc;
         }
-
         ul li strong {
             color: #1e40af;
         }
-
         /* 二级列表样式 */
         ul ul {
             margin-left: 20px;
             margin-top: 8px;
+            color: #475569;
+            list-style: circle;
+        }
+
+        /* 数据成果高亮 */
+        .data-result {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .data-item {
+            background-color: #f0f7ff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 120px;
+            border: 1px solid #bfdbfe;
+        }
+        .data-item .num {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 5px;
+        }
+        .data-item .desc {
+            font-size: 14px;
             color: #475569;
         }
 
@@ -121,127 +175,412 @@
             margin: 20px 0;
         }
 
+        /* 锚点导航 */
+        .nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            overflow-x: auto;
+        }
+        .nav ul {
+            display: flex;
+            gap: 12px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav a {
+            color: #475569;
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+        .nav a:hover {
+            background-color: #eff6ff;
+            color: #1e40af;
+            font-weight: 500;
+        }
+
         /* 移动端适配 */
         @media (max-width: 768px) {
             body {
                 padding: 15px 10px;
                 font-size: 14px;
             }
-
-            h1 {
-                font-size: 22px;
-                margin: 20px 0 30px;
+            .card-avatar h1 {
+                font-size: 24px;
             }
-
-            h2 {
-                font-size: 18px;
-            }
-
-            h3 {
+            .card-avatar p {
                 font-size: 16px;
             }
-
+            .contact {
+                gap: 15px;
+                font-size: 14px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            h3 {
+                font-size: 18px;
+            }
+            h4 {
+                font-size: 16px;
+            }
             .card {
                 padding: 20px 15px;
             }
-
-            .basic-info {
+            .base-info {
                 gap: 10px;
             }
-
-            .basic-info > div {
+            .base-info > div {
                 padding: 6px 12px;
                 font-size: 14px;
+            }
+            .data-item {
+                min-width: 100px;
+                padding: 8px 15px;
+            }
+            .data-item .num {
+                font-size: 18px;
             }
         }
     </style>
 </head>
 <body>
-    <h1>箭牌零售门店数字化项目经验</h1>
-
-    <!-- 基础信息卡片 -->
-    <div class="card">
-        <h2>基础信息</h2>
-        <div class="basic-info">
-            <div>项目时间：2018.07-2020.06（23个月）</div>
-            <div>项目角色：唯一项目负责人</div>
+    <!-- 头部个人名片 -->
+    <div class="card-avatar">
+        <h1>刘嘉威 - 运营经理专业作品集</h1>
+        <p>产品/商家运营 | 数字化转型 | 文旅运营</p>
+        <div class="contact">
+            <div>📞 15875772637（微信同号）</div>
+            <div>📧 1324017107@qq.com</div>
         </div>
     </div>
 
-    <!-- 项目背景卡片 -->
-    <div class="card">
-        <h2>项目背景</h2>
-        <p>为箭牌全国门店引入数字化系统，推动数字化赋能门店业务发展。</p>
-    </div>
-
-    <!-- 项目内容卡片 -->
-    <div class="card">
-        <h2>项目内容</h2>
-        
-        <h3>1. 数字化系统建设阶段</h3>
+    <!-- 锚点导航 - 快速跳转到对应板块 -->
+    <div class="nav">
         <ul>
-            <li><strong>目标</strong>：搭建符合需求的数字化系统</li>
-            <li><strong>任务</strong>：调研分析需求，形成说明书；设计架构，确定技术栈；开发测试系统、部署试运行并优化</li>
-            <li><strong>成果</strong>：相关文档、可试运行系统及试点反馈优化报告</li>
-        </ul>
-
-        <div class="divider"></div>
-
-        <h3>2. 推广和培训应用阶段</h3>
-        <ul>
-            <li><strong>目标</strong>：推动系统落地，提升用户操作能力</li>
-            <li><strong>任务</strong>：制定执行推广方案；搭建分层培训体系；跟踪应用效果并优化</li>
-            <li><strong>成果</strong>：包括推广执行报告、培训课件、用户使用数据报告及系统优化报告</li>
-        </ul>
-
-        <div class="divider"></div>
-
-        <h3>3. 活动策划阶段</h3>
-        <ul>
-            <li><strong>目标</strong>：扩大系统影响力，提升用户粘性</li>
-            <li><strong>任务</strong>：确定活动目标主题、设计活动方案；宣传执行活动、复盘总结</li>
-            <li><strong>成果</strong>：活动策划方案、宣传物料、数据报表及复盘报告</li>
+            <li><a href="#core-competence">核心竞争力</a></li>
+            <li><a href="#travel-operation">文旅运营</a></li>
+            <li><a href="#digital-transformation">数字化转型</a></li>
+            <li><a href="#life-cycle">全生命周期运营</a></li>
+            <li><a href="#methodology">核心方法论</a></li>
+            <li><a href="#achievement">核心成果</a></li>
+            <li><a href="#arrow-project">箭牌重点项目</a></li>
         </ul>
     </div>
 
-    <!-- 项目成果卡片 -->
-    <div class="card">
-        <h2>项目成果</h2>
-        
-        <h3>1. 产品（应用）方面</h3>
-        <p>完成箭牌家居卫浴事业部数字化产品矩阵，为瓷砖事业部打造了成功的案例。</p>
-        <ul>
-            <li><strong>(1) B2C矩阵</strong>：
-                <ul>
-                    <li>B2C商城小程序（商城应用、直播应用、会员应用、门店管理与服务应用等）</li>
-                    <li>企业微信（分销应用、营销活动应用、店员管理应用、分账应用等）</li>
-                    <li>C2C活动小程序（分销员营销活动应用、分账应用等）</li>
-                </ul>
-            </li>
-            <li><strong>(2) B2B小程序</strong>：
-                <ul>
-                    <li>经销门店拿货小程序商城</li>
-                    <li>加盟和入驻小程序</li>
-                </ul>
-            </li>
-            <li><strong>(3) 其他平台</strong>：微信视频号、天猫新零售、苏宁易购、京东等</li>
-        </ul>
+    <!-- 01 核心竞争力概述 -->
+    <section id="core-competence">
+        <h2>01 核心竞争力概述</h2>
+        <div class="card">
+            <h3>行业深耕经验</h3>
+            <ul>
+                <li>7年+ 商家服务运营实战经验</li>
+                <li>深耕企业级服务与文旅运营双领域</li>
+                <li>熟悉B端业务逻辑与痛点</li>
+            </ul>
 
-        <div class="divider"></div>
+            <div class="divider"></div>
+            <h3>全栈运营能力</h3>
+            <ul>
+                <li>产品运营全链路打造与体系搭建</li>
+                <li>商家全生命周期精细化运营</li>
+                <li>文旅活动策划与供应链资源整合</li>
+            </ul>
 
-        <h3>2. 数据成果</h3>
-        <ul>
-            <li>800余家门店入驻商城小程序</li>
-            <li>90%以上门店长期使用会员、营销、分销和直播等核心功能</li>
-            <li>为箭牌家居集团提供了完善的数字化转型路径案例，其他事业部或品牌（箭牌旗下的安华、法恩莎）均复制其数字化转型路径</li>
-            <li>因箭牌家居历史关系，在家居行业是较早意识到数字化转型的企业，此后其他头部家居企业巨头均模仿其路径</li>
-        </ul>
-    </div>
+            <div class="divider"></div>
+            <h3>数字化价值驱动</h3>
+            <ul>
+                <li>打通产品能力与商业场景壁垒</li>
+                <li>数字化转型落地与工具赋能</li>
+                <li>通过标准化体系实现商家价值增长</li>
+            </ul>
 
-    <!-- 离开项目原因卡片 -->
-    <div class="card">
-        <h2>离开项目原因</h2>
-        <p>受疫情影响，项目后期未能前往全国门店开展赋能工作，导致项目一度停滞。当前项目已重启，但新接手该工作的人员仍会陆续就项目相关事宜向我进行咨询。</p>
-    </div>
+            <div class="divider"></div>
+            <h3>核心职业关键词</h3>
+            <div class="base-info">
+                <div>商家服务</div>
+                <div>产品运营</div>
+                <div>数字化转型</div>
+                <div>活动运营</div>
+                <div>文旅运营</div>
+                <div>供应链整合</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 02 文旅运营板块 -->
+    <section id="travel-operation">
+        <h2>02 文旅运营与商业场景落地</h2>
+        <!-- 文旅特色活动策划与落地 -->
+        <div class="card">
+            <h3>文旅特色活动策划与落地</h3>
+            <div class="base-info">
+                <div>服务企业：佛山市盈宇企业管理有限公司</div>
+                <div>项目周期：2024.6 - 至今</div>
+                <div>核心目标：精准引流与商业转化双提升</div>
+            </div>
+            <h4>核心工作内容</h4>
+            <ul>
+                <li>定位亲子、研学等客群，策划主题市集与研学活动</li>
+                <li>优化活动流程与转化路径，提升用户体验</li>
+                <li>全链路数据跟踪，实现策略持续迭代</li>
+            </ul>
+            <h4>项目价值成果</h4>
+            <div class="data-result">
+                <div class="data-item"><div class="num">30%+</div><div class="desc">活动参与度提升</div></div>
+                <div class="data-item"><div class="num">25%</div><div class="desc">商业转化提升</div></div>
+            </div>
+        </div>
+
+        <!-- 文旅商家数字化运营平台搭建 -->
+        <div class="card">
+            <h3>文旅商家数字化运营平台搭建</h3>
+            <div class="base-info">
+                <div>服务企业：佛山市盈宇企业管理有限公司</div>
+                <div>项目周期：2024.6 - 至今</div>
+                <div>核心目标：全流程数字化赋能</div>
+            </div>
+            <h4>核心工作内容</h4>
+            <ul>
+                <li>梳理核心需求，搭建集<span style="color:#1e40af;font-weight:500;">入驻、订单、营销、数据分析</span>于一体的数字化平台</li>
+            </ul>
+            <h4>项目价值成果</h4>
+            <div class="data-result">
+                <div class="data-item"><div class="num">80%</div><div class="desc">覆盖运营需求</div></div>
+                <div class="data-item"><div class="num">40%</div><div class="desc">运营效率提升</div></div>
+            </div>
+            <p>大幅缩短营销落地周期，实现全流程数字化管控</p>
+        </div>
+
+        <!-- 文旅供应链协同体系搭建 -->
+        <div class="card">
+            <h3>文旅供应链协同体系搭建</h3>
+            <div class="base-info">
+                <div>服务企业：佛山市盈宇企业管理有限公司</div>
+                <div>核心目标：资源整合保障货源稳定与高效流通</div>
+            </div>
+            <h4>核心工作内容</h4>
+            <ul>
+                <li>对接并整合50+家文旅供应商、文创商家及研学基地</li>
+                <li>成功搭建轻量化的供应链协同网络，解决供应链对接痛点</li>
+            </ul>
+            <h4>项目价值成果</h4>
+            <div class="data-result">
+                <div class="data-item"><div class="num">95%</div><div class="desc">货源稳定率</div></div>
+                <div class="data-item"><div class="num">35%</div><div class="desc">流通效率提升</div></div>
+                <div class="data-item"><div class="num">↓</div><div class="desc">供应链对接成本</div></div>
+            </div>
+        </div>
+
+        <!-- 文旅品牌企划与数字平台推广 -->
+        <div class="card">
+            <h3>文旅品牌企划与数字平台推广</h3>
+            <div class="base-info">
+                <div>服务企业：佛山大愿文化产业发展有限公司</div>
+                <div>项目周期：2018.6 - 2019.3</div>
+                <div>核心目标：品牌声量提升与平台用户沉淀</div>
+            </div>
+            <h4>核心工作内容</h4>
+            <ul>
+                <li>制定品牌推广与PR方案，统筹数字文旅平台全渠道推广</li>
+                <li>基于市场反馈持续迭代优化运营策略</li>
+            </ul>
+            <h4>项目价值成果</h4>
+            <div class="data-result">
+                <div class="data-item"><div class="num">40%</div><div class="desc">品牌声量提升</div></div>
+                <div class="data-item"><div class="num">10万+</div><div class="desc">数字平台用户覆盖</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 03 商家数字化转型落地板块 -->
+    <section id="digital-transformation">
+        <h2>03 商家数字化转型落地</h2>
+        <!-- 连锁零售/餐饮数字化转型定制化服务 -->
+        <div class="card">
+            <h3>连锁零售/餐饮数字化转型定制化服务</h3>
+            <div class="base-info">
+                <div>服务企业：启迪万众网络科技有限公司</div>
+                <div>项目周期：2022.8 - 2024.3</div>
+                <div>服务客群：连锁零售、餐饮门店</div>
+            </div>
+            <h4>全流程服务体系</h4>
+            <ul>
+                <li><strong>需求挖掘</strong>：深度调研业务痛点，精准定位数字化需求</li>
+                <li><strong>方案输出</strong>：结合行业特性，输出定制化数字化解决方案</li>
+                <li><strong>项目落地</strong>：高效实施系统部署，保障落地效果</li>
+                <li><strong>培训赋能</strong>：开展全员系统操作培训，提升操作熟练度</li>
+                <li><strong>效果优化</strong>：跟踪核心指标，持续优化提升运营效果</li>
+            </ul>
+            <h4>项目核心价值</h4>
+            <div class="data-result">
+                <div class="data-item"><div class="num">30+</div><div class="desc">服务客户</div></div>
+                <div class="data-item"><div class="num">80%</div><div class="desc">方案签约率</div></div>
+                <div class="data-item"><div class="num">70%</div><div class="desc">续约增购率</div></div>
+            </div>
+            <p>实现收银效率与会员转化双重提升，助力零售/餐饮门店数字化升级</p>
+        </div>
+
+        <!-- 箭牌家居全国门店数字化整体落地（原内容整合升级） -->
+        <div class="card" id="arrow-project">
+            <h3>箭牌家居全国门店数字化整体落地（重点项目）</h3>
+            <div class="base-info">
+                <div>服务企业：箭牌家居集团股份有限公司</div>
+                <div>项目周期：2019.3 - 2022.7（核心执行23个月）</div>
+                <div>项目角色：唯一项目负责人</div>
+                <div>核心目标：全国门店数字化全覆盖+运营效率提升</div>
+            </div>
+            <h4>核心执行策略</h4>
+            <ul>
+                <li>制定全国门店数字化转型顶层设计方案，明确落地路径</li>
+                <li>推进200+门店系统部署，开展全员数字化技能培训</li>
+                <li>建立多维度数据监控体系，推动跨部门高效协作</li>
+                <li>分阶段完成<span style="color:#1e40af;font-weight:500;">系统建设、推广培训、活动策划</span>全链路落地</li>
+            </ul>
+            <h4>数字化产品矩阵成果</h4>
+            <ul>
+                <li><strong>B2C矩阵</strong>：商城小程序（直播/会员/门店管理）、企业微信（分销/分账/店员管理）、C2C活动小程序</li>
+                <li><strong>B2B小程序</strong>：经销门店拿货商城、加盟入驻小程序</li>
+                <li><strong>全平台布局</strong>：微信视频号、天猫新零售、苏宁易购、京东等</li>
+            </ul>
+            <h4>项目核心价值成果</h4>
+            <div class="data-result">
+                <div class="data-item"><div class="num">200+</div><div class="desc">全国门店数字化全覆盖</div></div>
+                <div class="data-item"><div class="num">30%</div><div class="desc">门店运营效率提升</div></div>
+                <div class="data-item"><div class="num">22%</div><div class="desc">会员转化率提升</div></div>
+                <div class="data-item"><div class="num">800+</div><div class="desc">门店入驻商城小程序</div></div>
+                <div class="data-item"><div class="num">90%+</div><div class="desc">核心功能长期使用率</div></div>
+            </div>
+            <p>为箭牌家居集团提供完善的数字化转型路径案例，旗下安华、法恩莎等品牌均复制该路径；成为家居行业数字化转型标杆，被头部企业模仿参考。</p>
+            <h4>项目特殊说明</h4>
+            <p>受疫情影响，项目后期全国门店线下赋能工作暂滞，目前项目已重启；新接手团队仍持续就项目细节进行咨询，保障落地效果延续。</p>
+        </div>
+    </section>
+
+    <!-- 04 商家全生命周期运营板块 -->
+    <section id="life-cycle">
+        <h2>04 商家全生命周期运营</h2>
+        <div class="card">
+            <h3>文旅商家全周期运营服务体系搭建与落地</h3>
+            <div class="base-info">
+                <div>服务企业：佛山市盈宇企业管理有限公司</div>
+                <div>项目周期：2024.6 - 至今</div>
+                <div>项目核心：一站式运营服务赋能商家成长</div>
+            </div>
+            <h4>核心服务模块</h4>
+            <ul>
+                <li><strong>招商推广</strong>：精准定位目标商户，多渠道推广，吸引80+优质商家入驻，构建丰富商业生态</li>
+                <li><strong>一站式服务</strong>：提供全方位运营指导、专业培训及快速诉求响应，服务响应及时率达98%</li>
+                <li><strong>数字化赋能</strong>：引入高效数字化工具，定制精准营销方案，优化经营流程，提升运营效率与收益</li>
+            </ul>
+            <h4>项目核心价值</h4>
+            <div class="data-result">
+                <div class="data-item"><div class="num">30%+</div><div class="desc">合作商家经营效益提升</div></div>
+                <div class="data-item"><div class="num">98%</div><div class="desc">服务响应及时率</div></div>
+                <div class="data-item"><div class="num">80+</div><div class="desc">优质入驻商家</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 05 核心方法论与体系输出 -->
+    <section id="methodology">
+        <h2>05 核心方法论与体系输出</h2>
+        <!-- 商家全生命周期标准化服务体系 -->
+        <div class="card">
+            <h3>商家全生命周期标准化服务体系</h3>
+            <ul>
+                <li><strong>招商入驻</strong>：标准化准入流程，快速完成资质审核与开通</li>
+                <li><strong>运营指导</strong>：提供店铺装修、商品上架及运营策略专业建议</li>
+                <li><strong>培训赋能</strong>：定期举办线上线下课程，系统性提升商家经营能力</li>
+                <li><strong>诉求响应</strong>：建立48小时快速响应机制，及时解决商家问题</li>
+                <li><strong>效果优化</strong>：基于数据洞察，持续优化营销效果与ROI</li>
+            </ul>
+            <div class="data-result">
+                <div class="data-item"><div class="num">40%</div><div class="desc">服务效率提升</div></div>
+                <div class="data-item"><div class="num">90%+</div><div class="desc">客户满意度</div></div>
+            </div>
+        </div>
+
+        <!-- 阶梯式分层培训体系 -->
+        <div class="card">
+            <h3>阶梯式分层培训体系</h3>
+            <ul>
+                <li><strong>第一阶段：基础操作</strong>：针对新人入职，聚焦核心业务流程与SOP，夯实业务基本功</li>
+                <li><strong>第二阶段：进阶运营</strong>：针对骨干员工，深入数据分析与策略优化，培养独立解决复杂问题能力</li>
+                <li><strong>第三阶段：应急处理</strong>：针对资深专家，模拟极端场景演练，建立快速响应机制，保障业务连续性</li>
+            </ul>
+            <h4>体系价值与成效</h4>
+            <div class="data-result">
+                <div class="data-item"><div class="num">100%</div><div class="desc">参训人员技能达标率</div></div>
+            </div>
+            <p>线上线下结合考核，实现培训效果量化与能力交付落地</p>
+        </div>
+
+        <!-- 商家数字化运营数据监控体系 -->
+        <div class="card">
+            <h3>商家数字化运营数据监控体系</h3>
+            <ul>
+                <li><strong>多行业核心指标体系</strong>：提炼零售、餐饮、文旅等行业核心指标，构建全维度数据监控模型</li>
+                <li><strong>实时监控与智能预警</strong>：毫秒级实时数据同步，异常指标自动预警，风险控制在萌芽状态</li>
+                <li><strong>数据驱动精准决策</strong>：输出标准化运营分析报告，以数据洞察指导业务优化方向</li>
+            </ul>
+            <p>让每一次运营决策都有据可依，实现业务增长的精准落地</p>
+        </div>
+
+        <!-- 文旅产业供应链资源合作机制 -->
+        <div class="card">
+            <h3>文旅产业供应链资源合作机制</h3>
+            <ul>
+                <li><strong>合作方准入</strong>：严格资质审核与评估体系，确保合作伙伴服务能力与行业信誉</li>
+                <li><strong>资源精准匹配</strong>：基于大数据分析，实现供需两端智能对接，最大化资源利用率</li>
+                <li><strong>共赢利益分配</strong>：设计公平透明的收益共享模型，构建长期稳定的利益共同体</li>
+                <li><strong>服务质量考核</strong>：全流程服务监控+定期评估，建立优胜劣汰机制，保障服务品质</li>
+            </ul>
+            <h4>机制核心价值</h4>
+            <p>保障文旅产业链上下游的高效整合，实现可持续的长期共赢发展</p>
+        </div>
+    </section>
+
+    <!-- 06 职业核心成果总结 -->
+    <section id="achievement">
+        <h2>06 职业核心成果总结</h2>
+        <div class="card" style="text-align: center;">
+            <div class="data-result" style="justify-content: center;">
+                <div class="data-item"><div class="num">300+</div><div class="desc">累计服务商家</div></div>
+                <div class="data-item"><div class="num">30%+</div><div class="desc">商家经营效益平均提升</div></div>
+                <div class="data-item"><div class="num">80+</div><div class="desc">成功招商优质商家</div></div>
+                <div class="data-item"><div class="num">10万+</div><div class="desc">累计带动精准流量</div></div>
+                <div class="data-item"><div class="num">80%</div><div class="desc">方案签约率</div></div>
+                <div class="data-item"><div class="num">70%</div><div class="desc">客户续约增购率</div></div>
+            </div>
+            <div class="divider"></div>
+            <ul style="list-style: none; margin: 0; font-size: 17px;">
+                <li>✅ 搭建文旅商家数字化平台及供应链协同体系，夯实业务底层基础</li>
+                <li>✅ 形成标准化商家服务/培训/数据监控体系，实现规模化赋能</li>
+                <li>✅ 打造家居/零售/文旅多行业数字化转型标杆案例，具备跨行业落地能力</li>
+                <li>✅ 实现从「运营执行」到「体系搭建」「价值驱动」的职业能力升级</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 致谢 -->
+    <section style="margin-top: 40px; text-align: center;">
+        <h2>07 致谢</h2>
+        <div class="card">
+            <h3 style="text-align: center; margin: 0; color: #475569;">感谢观看 · 期待与您合作</h3>
+            <div class="contact" style="margin-top: 20px;">
+                <div>📞 15875772637（微信同号）</div>
+                <div>📧 1324017107@qq.com</div>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>
