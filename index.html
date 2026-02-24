@@ -5,68 +5,179 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>箭牌零售门店数字化项目经验</title>
     <style>
+        /* 全局重置与基础样式 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Microsoft YaHei", Arial, sans-serif;
+            font-family: "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
         }
+
         body {
             max-width: 1000px;
+            width: 100%;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px 15px;
             line-height: 1.8;
-            color: #333;
-            background-color: #f8f9fa;
+            color: #334155;
+            background-color: #f8fafc;
+            font-size: 16px;
+            scroll-behavior: smooth; /* 平滑滚动 */
         }
+
+        /* 标题样式 */
         h1 {
             text-align: center;
-            color: #2c3e50;
-            margin-bottom: 30px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #3498db;
+            color: #1e40af;
+            margin: 30px 0 40px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #3b82f6;
+            font-weight: 700;
+            font-size: 28px;
         }
+
         h2 {
-            color: #2980b9;
-            margin: 25px 0 15px;
+            color: #1e40af;
+            margin: 30px 0 15px;
+            font-size: 22px;
+            position: relative;
+            padding-left: 12px;
         }
+
+        h2::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 4px;
+            height: 20px;
+            background-color: #3b82f6;
+            border-radius: 2px;
+        }
+
         h3 {
-            color: #34495e;
+            color: #334155;
             margin: 20px 0 10px;
+            font-size: 18px;
+            font-weight: 600;
         }
-        .section {
+
+        /* 卡片容器 */
+        .card {
             background: white;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            transition: box-shadow 0.3s ease;
         }
+
+        .card:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        /* 基础信息样式 */
+        .basic-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+
+        .basic-info > div {
+            background-color: #eff6ff;
+            padding: 8px 16px;
+            border-radius: 6px;
+            color: #1e40af;
+            font-weight: 500;
+        }
+
+        /* 列表样式 */
         ul {
-            margin-left: 30px;
+            margin-left: 20px;
             margin-bottom: 15px;
         }
-        .highlight {
-            color: #e74c3c;
-            font-weight: bold;
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        ul li strong {
+            color: #1e40af;
+        }
+
+        /* 二级列表样式 */
+        ul ul {
+            margin-left: 20px;
+            margin-top: 8px;
+            color: #475569;
+        }
+
+        /* 分隔线 */
+        .divider {
+            height: 1px;
+            background-color: #e2e8f0;
+            margin: 20px 0;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px 10px;
+                font-size: 14px;
+            }
+
+            h1 {
+                font-size: 22px;
+                margin: 20px 0 30px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            h3 {
+                font-size: 16px;
+            }
+
+            .card {
+                padding: 20px 15px;
+            }
+
+            .basic-info {
+                gap: 10px;
+            }
+
+            .basic-info > div {
+                padding: 6px 12px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 <body>
     <h1>箭牌零售门店数字化项目经验</h1>
 
-    <div class="section">
+    <!-- 基础信息卡片 -->
+    <div class="card">
         <h2>基础信息</h2>
-        <p><strong>项目时间</strong>：2018.07-2020.06（23个月）</p>
-        <p><strong>项目角色</strong>：唯一项目负责人</p>
+        <div class="basic-info">
+            <div>项目时间：2018.07-2020.06（23个月）</div>
+            <div>项目角色：唯一项目负责人</div>
+        </div>
     </div>
 
-    <div class="section">
+    <!-- 项目背景卡片 -->
+    <div class="card">
         <h2>项目背景</h2>
         <p>为箭牌全国门店引入数字化系统，推动数字化赋能门店业务发展。</p>
     </div>
 
-    <div class="section">
+    <!-- 项目内容卡片 -->
+    <div class="card">
         <h2>项目内容</h2>
+        
         <h3>1. 数字化系统建设阶段</h3>
         <ul>
             <li><strong>目标</strong>：搭建符合需求的数字化系统</li>
@@ -74,12 +185,16 @@
             <li><strong>成果</strong>：相关文档、可试运行系统及试点反馈优化报告</li>
         </ul>
 
+        <div class="divider"></div>
+
         <h3>2. 推广和培训应用阶段</h3>
         <ul>
             <li><strong>目标</strong>：推动系统落地，提升用户操作能力</li>
             <li><strong>任务</strong>：制定执行推广方案；搭建分层培训体系；跟踪应用效果并优化</li>
             <li><strong>成果</strong>：包括推广执行报告、培训课件、用户使用数据报告及系统优化报告</li>
         </ul>
+
+        <div class="divider"></div>
 
         <h3>3. 活动策划阶段</h3>
         <ul>
@@ -89,8 +204,10 @@
         </ul>
     </div>
 
-    <div class="section">
+    <!-- 项目成果卡片 -->
+    <div class="card">
         <h2>项目成果</h2>
+        
         <h3>1. 产品（应用）方面</h3>
         <p>完成箭牌家居卫浴事业部数字化产品矩阵，为瓷砖事业部打造了成功的案例。</p>
         <ul>
@@ -110,6 +227,8 @@
             <li><strong>(3) 其他平台</strong>：微信视频号、天猫新零售、苏宁易购、京东等</li>
         </ul>
 
+        <div class="divider"></div>
+
         <h3>2. 数据成果</h3>
         <ul>
             <li>800余家门店入驻商城小程序</li>
@@ -119,7 +238,8 @@
         </ul>
     </div>
 
-    <div class="section">
+    <!-- 离开项目原因卡片 -->
+    <div class="card">
         <h2>离开项目原因</h2>
         <p>受疫情影响，项目后期未能前往全国门店开展赋能工作，导致项目一度停滞。当前项目已重启，但新接手该工作的人员仍会陆续就项目相关事宜向我进行咨询。</p>
     </div>
